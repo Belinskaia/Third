@@ -1,0 +1,4 @@
+with open('C:/Users/Катерина/Desktop/blabla.txt', 'r') as blabla:
+    M = blabla.readlines()
+    for m in M:
+         print(m.strip(' '), end ='') #без end = '' на винде он добавляет промежуточные строки
