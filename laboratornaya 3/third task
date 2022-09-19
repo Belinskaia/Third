@@ -1,0 +1,122 @@
+import zipfile
+import os
+man = zipfile.ZipFile('C:/Users/Катерина/Downloads/main.zip')
+man.extractall('C:/Users/Катерина/Downloads')
+case = set()
+with open('C:/Users/Катерина/Desktop/blabla.txt','w') as potok:
+    for a, b, c in os.walk('C:/Users/Катерина/Downloads/main'):
+        print(c)
+        for file in c:
+            if file[-3::1] == '.py':
+                case.add(a)
+    case = list(case)
+    case.sort()
+
+    for i in range(len(case)):
+        potok.write(case[i] + '\n')
+ '''содержание файла blabla:
+C:/Users/Катерина/Downloads/main
+C:/Users/Катерина/Downloads/main\afkgv
+C:/Users/Катерина/Downloads/main\frtrl
+C:/Users/Катерина/Downloads/main\hgyoc
+C:/Users/Катерина/Downloads/main\hgyoc\kwawh
+C:/Users/Катерина/Downloads/main\hgyoc\kwawh\hapry
+C:/Users/Катерина/Downloads/main\hgyoc\kwawh\rzgzv
+C:/Users/Катерина/Downloads/main\hgyoc\ycbxr\ivjta
+C:/Users/Катерина/Downloads/main\ksuvk\xjrqt
+C:/Users/Катерина/Downloads/main\ksuvk\xjrqt\qdbqt\hotgx
+C:/Users/Катерина/Downloads/main\ksuvk\xjrqt\qdbqt\hotgx\izwwv
+C:/Users/Катерина/Downloads/main\ksuvk\xjrqt\qdbqt\prkcp\dnyyv
+C:/Users/Катерина/Downloads/main\lqbli\otofk
+C:/Users/Катерина/Downloads/main\lqbli\otofk\armko
+C:/Users/Катерина/Downloads/main\mwhci
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\rwwuw
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\grnfu
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\juoxd
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\kztxg\qwlrx
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\kztxg\qwlrx\djozj
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\kztxg\qwlrx\lirot
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\kztxg\qwlrx\nfcxf
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\afrqp\iaujh
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\afrqp\iaujh\jqjsg
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\afrqp\iaujh\jqjsg\xriod
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\afrqp\iaujh\jqnsz
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\evnvn\axqur
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\evnvn\axqur\itkcz
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\hlgup
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\hlgup\auqky
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\sxojq
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\xroxl
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\xroxl\abslw
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\xroxl\rgunj\bdcjg
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\xroxl\rgunj\bdcjg\ktkfx
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\xroxl\rgunj\bdcjg\vkntp
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\xroxl\rgunj\bdcjg\vkntp\rjqjr
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\dufxr\xroxl\rgunj\bdcjg\xpmcm
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo\gvbnv
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo\rpnzm
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo\rpnzm\ilogc
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo\rpnzm\ilogc\reshp
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo\rpnzm\kafov
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo\rpnzm\kafov\iites\ygtox\bpmhg
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo\rpnzm\kafov\iites\ygtox\rhvqn
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo\rpnzm\kafov\iites\ygtox\rhvqn\ggfcr
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bkfog\rvsfo\rpnzm\kafov\iites\ygtox\rhvqn\ggfcr\kxyxy\qrxwt
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bsgqc\ujtgh
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\bsgqc\ujtgh\tyapv
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\kgdme\jhhbu\rnqwd\purto\hmnro\jtmnb
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\sgmoj
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\ppeir\subdi\zljoz\xrvnu
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\qosgw
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\mgplg\rbyav\uaodv
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\cazio
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\cazio\sosdj
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\cazio\sosdj\rcsvd
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\cazio\sosdj\uuyrs
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\cazio\sosdj\yujjk
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme\eayzq\isyki
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme\eayzq\nuiwj
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme\eayzq\tixoq\lldpv
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme\eayzq\wfnda
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme\kehsm
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme\vynzv
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme\wvwva
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme\wvwva\jebnq\kjmeo
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\jvmme\wvwva\jebnq\phcud
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjka\pxjip\wthmo\wtgrc\zfukg\vydse
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\nujko\ywjxy
+C:/Users/Катерина/Downloads/main\olmhl\mmtsz\phcap
+C:/Users/Катерина/Downloads/main\qkseh
+C:/Users/Катерина/Downloads/main\sitdc
+C:/Users/Катерина/Downloads/main\taivr
+C:/Users/Катерина/Downloads/main\taivr\bcsow
+C:/Users/Катерина/Downloads/main\taivr\yptwa\xsbzr
+C:/Users/Катерина/Downloads/main\taivr\yptwa\xsbzr\hcasz\ilitr\joejy
+C:/Users/Катерина/Downloads/main\taivr\yptwa\xsbzr\hcasz\ilitr\urguw\sjmeg\ddnaa
+C:/Users/Катерина/Downloads/main\taivr\yptwa\xsbzr\hcasz\ilitr\urguw\sjmeg\ddnaa\ckaab
+C:/Users/Катерина/Downloads/main\taivr\yptwa\xsbzr\hcasz\ilitr\urguw\sjmeg\ddnaa\jxhbl\lradw
+C:/Users/Катерина/Downloads/main\taivr\yptwa\xsbzr\hcasz\ilitr\urguw\sjmeg\ddnaa\jxhbl\lradw\iglcm
+C:/Users/Катерина/Downloads/main\taivr\yptwa\xsbzr\hcasz\ilitr\urguw\sjmeg\ddnaa\jxhbl\tpdvr
+C:/Users/Катерина/Downloads/main\taivr\yptwa\xsbzr\hcasz\ilitr\urguw\sjmeg\ddnaa\lszec
+C:/Users/Катерина/Downloads/main\taivr\yptwa\xsbzr\hcasz\ilitr\urguw\sjmeg\ddnaa\lszec\wdftb\mhqps
+C:/Users/Катерина/Downloads/main\uvvuz
+C:/Users/Катерина/Downloads/main\uvvuz\ksnof
+C:/Users/Катерина/Downloads/main\zduna\ywucw
+C:/Users/Катерина/Downloads/main\zyczx
+'''
