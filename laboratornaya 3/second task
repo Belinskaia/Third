@@ -1,0 +1,6 @@
+def write_array(array, file_name):
+    S = '\n'.join(array)
+    with open(file_name,'w') as M:
+        M.write(S)
+A = ['jrkhj','nnnnnnn','eeeeeeee']   #тест для проверки
+write_array(A,'C:/Users/Катерина/Desktop/blabla.txt')
