@@ -1,0 +1,85 @@
+import csv
+def MainFunction (path):
+    scope = list()
+    with open(path,'r',encoding='UTF-8') as case:
+        book = csv.reader(case) # массив элементы которого строки файла
+        for i in book:
+            scope.append(i)
+    with open(path,'a',encoding = 'UTF-8') as case:
+        newbook = csv.writer(case)
+    print("Type instruction: key - next action\n I - find information about student\n G - get a list of group\n A - add the student\n D - delete the student\n")
+    request = input()
+    try:
+        if request == 'A':
+            print("Enter full name of student (in order: S, N, P; or S, N,' ' if there is not patronymic), course number, group number")
+            member = input().split()
+            if len(member) != 5:
+                print ('Invalid data format')
+            else:
+                scope.append(member)
+                print('Request completed\n student added!')
+        elif request == 'D':
+            print("Enter full name of student (in order: S, N, P; or S, N,' ' if there is not patronymic), course number, group number")
+            member = tuple(input().split())
+            try:
+                scope.remove(member)
+            except ValueError:
+                print('Student not found')
+            else:
+                print('Request completed\n student deleted!')
+        elif request == 'G':
+            print("Enter group number")
+            n = input()
+            if n in ['C20-211','C23-215','B03-118','B03-108','A05-101']:
+                Group_list = list()
+                for member in scope:
+                    if member[5] == n:
+                        Group_list.append(''.join(list(member[0:3:])))
+                print('Request completed\n group list generated!', Group_list)
+            else:
+                print("Group not found")
+        elif request == 'I':
+            member = input().split()
+            flag = 0
+            for man in scope:
+                if man[0] == member[0] and man[1] == member[1]:
+                    print(''.join(list(man)))
+                    flag = 1
+            if not flag:
+                print('Student not found')
+    except (Exception, SystemExit) as mistake:
+        print('Program find mistake: ', mistake)
+        raise mistake
+
+def test_convenient(a):  # функция проверяющая вводимые данные
+    sn, nm, pt, crs, gr = tuple(a)
+    crs = int()
+    for dline in list(sn) + list(nm) + list(pt):
+        if not 1040 <= ord(dline) <= 1103: # проверяем что введенные символы русские буквы
+            return "Data entered incorrectly"
+    if crs not in [1, 2, 3, 4, 5,6] or gr not in ['C20-211','C23-215','B03-118','B03-108','A05-101']:
+        return "Data entered incorrectly"
+def creation_file():
+    path = input()
+    try:
+        case = open(path, '+', encoding='UTF-8')
+        return 1
+    finally:
+        return 0
+
+print("Enter the path to the required database")
+path = input()
+import os
+try:
+    if not os.path.exists(path):
+        raise Exception
+    else:
+        case = open(path, 'w', encoding='UTF-8')
+except Exception:
+    print("This file does not exist or is not available")
+    Point = False
+    while not Point:
+        print("Enter another path to the database")
+        Point = creation_file()
+case.close()
+MainFunction(path)
