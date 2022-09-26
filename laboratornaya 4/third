@@ -1,0 +1,14 @@
+def decorator(func):
+    def a_wrapper_accepting_arguments(*args, **kwargs):
+        args = args[::-1]
+        func(*args, **kwargs)
+    return a_wrapper_accepting_arguments
+
+@decorator
+def div(x, y, show=False):
+    res = x / y
+    if show:
+        print(res)
+    return res
+
+div(2, 4, show=True)
