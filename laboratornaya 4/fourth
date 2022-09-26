@@ -1,0 +1,8 @@
+def decorator(func):
+    def deco(path):
+        def wrap(*args):
+            from time import time
+            tmp = time()
+            arguments = *args
+            
+    return deco
