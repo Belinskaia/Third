@@ -1,0 +1,19 @@
+def ishodnay_func(tup):
+    a = 0
+    for i in tup:
+        if int(i) % 2 == 0:
+            a+=1
+    return a
+def decorator(func):
+    def the_wrapper_around_the_original_function(tup):
+        m = func(tup)
+        if m == 0:
+            return 0
+        if m > 10:
+            return ("Очень много")
+        return m
+    return the_wrapper_around_the_original_function
+A = (4,6,8,10,12,14,16,18,20,22,24)
+print(ishodnay_func(A))
+ishodnay_func = decorator(ishodnay_func)
+print(ishodnay_func(A))
