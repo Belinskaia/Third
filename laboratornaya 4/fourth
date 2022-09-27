@@ -3,6 +3,7 @@ def F(n,m):   #просто рандомная функция, чтобы про
         return 1
     return n+m
 
+
 def decorator(func,path):
     def wrap(*args):
         from time import time
@@ -17,6 +18,8 @@ def decorator(func,path):
             file.write(str(start)+'\n'+str(args)+'\n'+str(result)+'\n'+str(finish)+'\n'+str(t))
         return result
     return wrap
+    
+    
 way = input()
 N = int(input())
 M = int(input())
