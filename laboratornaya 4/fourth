@@ -1,27 +1,25 @@
-def F(n,m):   #просто рандомная функция, чтобы проверить работу декоратора
-    if n == 1 or m == 2:
-        return 1
-    return n+m
-
-
-def decorator(func,path):
-    def wrap(*args):
-        from time import time
-        start = time()
-        result = func(*args)
-        if result is None:
-            result = '-'
-        finish = time()
-        t = finish - start
-        args = list(args)
-        with open(path, 'w') as file:
-            file.write(str(start)+'\n'+str(args)+'\n'+str(result)+'\n'+str(finish)+'\n'+str(t))
-        return result
-    return wrap
-    
-    
+def decorator(path):
+    def decorator2(func):
+        def wrap(*args):
+            from time import time
+            start = time()
+            result = func(*args)
+            if result is None:
+                result = '-'
+            finish = time()
+            t = finish - start
+            args = list(args)
+            with open(path, 'w') as file:
+                file.write(str(start)+'\n'+str(args)+'\n'+str(result)+'\n'+str(finish)+'\n'+str(t))
+            return result
+        return wrap
+    return decorator2
 way = input()
 N = int(input())
 M = int(input())
-F = decorator(F,way)
-F(N,M)
+@decorator(way)
+def f(n,m):   #просто рандомная функция чтобы проверить работу декоратора
+    if n == 1 or m == 2:
+        return 1
+    return n+m
+f(N,M)
