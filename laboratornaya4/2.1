@@ -2,15 +2,21 @@ class Shape():
     def __init__(self, a, h):
         self.width = a
         self.height = h
+        
+        
 class Triagle(Shape):
     def area(self):
         return self.width*self.height*0.5
+
+
 class Rectangle(Shape):
     def area(self):
         return float(self.width*self.height)
+
+
 shir = int(input())
 vust = int(input())
-t = Triagle(shir,vust)
-r = Rectangle(shir,vust)
+t = Triagle(shir, vust)
+r = Rectangle(shir, vust)
 print(t.area())
 print(r.area())
