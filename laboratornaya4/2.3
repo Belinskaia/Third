@@ -1,0 +1,23 @@
+class Animal():
+    def __init__(self, n, a):
+        self.name = n
+        self.age = a
+
+
+class Zebra(Animal):
+    def __init__(self, extra):
+        self.additional_information = extra
+    def information(self):
+        return self.name, self.age, self.additional_information
+
+
+class Dolphin(Animal):
+    def __init__(self, extra):
+        self.additional_information = extra
+    def information(self):
+        return self.name, self.age, self.additional_information
+
+z = Zebra('bla')
+d = Dolphin('la')
+z.information()
+d.information()
