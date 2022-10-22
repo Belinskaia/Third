@@ -14,7 +14,7 @@ class Base(ABC):
         pass
 
     @abstractmethod
-    def score(self):
+    def get_score(self):
         pass
 
 class A(Base):
