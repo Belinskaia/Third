@@ -106,7 +106,7 @@ def draw_help():
     data.append(["Num+", "More points"])
     data.append(["Num-", "Less points"])
     data.append(["", ""])
-    data.append([str(steps), "Current points"])
+    data.append([str(line.steps), "Current points"])
 
     pygame.draw.lines(gameDisplay, (255, 50, 50, 255), True, [
         (0, 0), (800, 0), (800, 600), (0, 600)], 5)
