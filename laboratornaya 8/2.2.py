@@ -5,6 +5,4 @@ def get_permutations(s, n):
         M[i] = "".join(list(M[i]))
     return M
 
-S = 'cat'
-N = 2
 print(list(get_permutations("cat", 2)))
