@@ -3,7 +3,7 @@ def print_map(function, iterable):
     try:
         while True:
             print(function(next(iterator)))
-    except Exception:
+    except StopIteration:
         pass
 
 
