@@ -22,13 +22,13 @@ REGEXP_2_REPL = ''
 # XaYbZcZaY  ---> XaYbZcZaY
 # DXEYFZabc  ---> XYZabc
 # ADBECFXYZ  ---> ABCXYZ
-REGEXP_3 = '[DEFbXYZ]'
+REGEXP_3 = '[DEF]'
 REGEXP_3_REPL = ''
 
 # abc0abc   ---> abcabc
 # 1a2b3c4   ---> abc
 # a123!@#bc ---> abc
-REGEXP_4 = '[01234!@#]'
+REGEXP_4 = '[^abc]'
 REGEXP_4_REPL = ''
 
 # a,b,c d,e,f      ---> a_b_c_d_e_f
@@ -55,12 +55,12 @@ REGEXP_7_REPL = ''
 # a b c  ---> a b c
 # a  b c ---> a b c
 # d    f ---> d f
-REGEXP_8 = '\s*'
+REGEXP_8 = '\s+'
 REGEXP_8_REPL = '\s'
 
 # a ab abc abcd ab ---> a ab ab
 # a xyz xyz a      ---> a a
 # d xy xyza a      ---> d xy a
 # a xyzzy b        ---> a xyzzy b
-REGEXP_9 = '(\s\w{3}\s)|(\s\w{4}\s)'
+REGEXP_9 = r'\b\w{4} |\b\w{3} '
 REGEXP_9_REPL = ' '
