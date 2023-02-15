@@ -1,3 +1,4 @@
+#задержки рейсов по временам года
 import pandas as pd
 import warnings
 import matplotlib.pyplot as plt
