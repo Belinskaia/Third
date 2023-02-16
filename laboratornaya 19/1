@@ -49,3 +49,7 @@ SELECT Readers.id, Records.reader_id, Readers.name
 FROM Readers
 LEFT JOIN Records
 ON Readers.id=Records.reader_id;
+
+#2.1
+SELECT * FROM Records, Books.title
+  WHERE '2021-08-12' BETWEEN taking_date AND returning_date;
