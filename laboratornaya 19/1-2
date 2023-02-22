@@ -41,15 +41,23 @@ VALUES
 SELECT * FROM Books;
 SELECT * FROM Readers;
 SELECT * FROM Records;
-SELECT Books.id, Records.book_id, Books.title
-FROM Books 
-LEFT JOIN Records
-ON Books.id=Records.book_id;
-SELECT Readers.id, Records.reader_id, Readers.name
-FROM Readers
-LEFT JOIN Records
-ON Readers.id=Records.reader_id;
 
 #2.1
-SELECT * FROM Records, Books.title
-  WHERE '2021-08-12' BETWEEN taking_date AND returning_date;
+SELECT id, title
+FROM Books
+INNER JOIN Records
+    ON Books.id = Records.book_id
+    WHERE DATETIME("now") BETWEEN Records.taking_date AND Records.returning_date;
+
+#2.2
+SELECT name, title
+FROM Books
+INNER JOIN Records 
+    ON Books.id = Records.book_id
+INNER JOIN Readers
+	ON Records.reader_id = Readers.id;
+
+#2.3
+SELECT author, COUNT(id)
+FROM Books
+GROUP BY author
